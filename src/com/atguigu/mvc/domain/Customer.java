@@ -5,6 +5,8 @@ public class Customer {
 	private String name;
 	private String address;
 	private String phone;
+	
+	private static final int NUMBER = 6;
 	public Integer getId() {
 		return id;
 	}
