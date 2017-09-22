@@ -1,4 +1,4 @@
-package com.atguigu.mvc.dao;
+package com.lajil.mvc.dao;
 
 
 import java.lang.reflect.ParameterizedType;
@@ -13,7 +13,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 import org.apache.coyote.http11.filters.VoidInputFilter;
 
-import com.atguigu.mvc.utils.JdbcUtils;
+import com.lajil.mvc.utils.JdbcUtils;
 import com.sun.glass.ui.CommonDialogs.Type;
 
 public class DAO<T> {

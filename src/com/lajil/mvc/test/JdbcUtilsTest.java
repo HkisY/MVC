@@ -1,4 +1,4 @@
-package com.atguigu.mvc.test;
+package com.lajil.mvc.test;
 
 import static org.junit.Assert.*;
 
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import org.junit.Test;
 
-import com.atguigu.mvc.utils.JdbcUtils;
+import com.lajil.mvc.utils.JdbcUtils;
 
 public class JdbcUtilsTest {
 

@@ -1,18 +1,23 @@
-package com.atguigu.mvc.test;
-
-import static org.junit.Assert.*;
+package com.lajil.mvc.test;
 
 import java.util.List;
 
 import org.junit.Test;
 
-import com.atguigu.mvc.dao.CustomerDAO;
-import com.atguigu.mvc.domain.Customer;
-import com.atguigu.mvc.impl.CustomerDAOJdbcImpl;
+import com.lajil.mvc.dao.CriteriaCustomer;
+import com.lajil.mvc.dao.CustomerDAO;
+import com.lajil.mvc.domain.Customer;
+import com.lajil.mvc.impl.CustomerDAOJdbcImpl;
 
 public class CustomerDAOJdbcImplTest {
 	private CustomerDAO customerDAO =
 			new CustomerDAOJdbcImpl();
+	@Test
+	public void testGetForListCriteriaCustomer(){
+		CriteriaCustomer cc = new CriteriaCustomer("jerry", null, null);
+		List<Customer> customers = customerDAO.getForListCriteriaCustomer(cc);
+		System.out.println(customers);
+	}
 	@Test
 	public void testGetAll() {
 		List<Customer> customers = customerDAO.getAll();

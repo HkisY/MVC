@@ -1,10 +1,11 @@
-package com.atguigu.mvc.impl;
+package com.lajil.mvc.impl;
 
 import java.util.List;
 
-import com.atguigu.mvc.dao.CustomerDAO;
-import com.atguigu.mvc.dao.DAO;
-import com.atguigu.mvc.domain.Customer;
+import com.lajil.mvc.dao.CriteriaCustomer;
+import com.lajil.mvc.dao.CustomerDAO;
+import com.lajil.mvc.dao.DAO;
+import com.lajil.mvc.domain.Customer;
 
 public class CustomerDAOJdbcImpl extends DAO<Customer> implements CustomerDAO{
 
@@ -36,6 +37,20 @@ public class CustomerDAOJdbcImpl extends DAO<Customer> implements CustomerDAO{
 	public long getCountWithName(String name) {
 		String sql = "select count(id) from customers where name =?";
 		return getForValue(sql, name);
+	}
+
+	
+	public List<Customer> getForListCriteriaCustomer(CriteriaCustomer cc) {
+		String sql = "SELECT id,name,address,phone FROM customers WHERE "+
+					"name LIKE ? AND address LIKE ? AND phone LIKE ?";
+		return getForList(sql, cc.getName(), cc.getAddress(), cc.getPhone());
+	}
+
+	@Override
+	public void update(Customer customer) {
+		String sql = "UPDATE customers SET name = ?,address = ?,phone = ? " +
+				"WHERE id = ?";
+		update(sql,customer.getName(),customer.getAddress(),customer.getPhone(),customer.getId());
 	}
 
 }
