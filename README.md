@@ -1,2 +1,2 @@
 # MVC
-practice the struct of the MVC
+The java web struct
