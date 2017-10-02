@@ -1,4 +1,4 @@
-package com.atguigu.mvc.utils;
+package com.lajil.mvc.utils;
 
 import java.sql.Connection;
 import java.sql.SQLException;

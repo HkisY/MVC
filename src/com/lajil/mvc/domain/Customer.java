@@ -1,10 +1,21 @@
-package com.atguigu.mvc.domain;
+package com.lajil.mvc.domain;
 
 public class Customer {
 	private Integer id;
 	private String name;
 	private String address;
 	private String phone;
+	
+	private static final int NUMBER = 6;
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
+	public Customer(String name, String address, String phone) {
+		super();
+		this.name = name;
+		this.address = address;
+		this.phone = phone;
+	}
 	public Integer getId() {
 		return id;
 	}
